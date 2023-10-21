@@ -86,6 +86,35 @@ const resolvers = {
                 { $addToSet: { likes: like._id } }
             );
             return article;
+        },
+        removeArticle: async(parent, { articleId }) => {
+            return Article.findOneAndDelete({ _id: articleId });
+        },
+        removeComment: async(parent, { articleId, commentId }) => {
+            const article = await Article.findOneAndUpdate(
+                { _id: articleId },
+                { $pull: { comments: commentId }},
+                { new: true }
+            );
+            return article;
+        },
+        removeLike: async(parent, { articleId, likeId }) => {
+            const article = await Article.findOneAndUpdate(
+                { _id: articleId },
+                { $pull: { likes: likeId }},
+                { new: true },
+            )
+            return article;
+        },
+        updateArticle: async(parent, { articleId, title, articleText }) => {
+            const updatedArticle = await Article.findOneAndUpdate(
+                { _id: articleId },
+                { title, articleText },
+                { new: true }
+            );
+            return updatedArticle;
         }
     }
 }
+
+module.exports = resolvers;
