@@ -65,17 +65,7 @@ userSchema.methods.isCorrectPassword = async function (password) {
     return bcrypt.compare(password, this.password);
 };
 
-// Set up pre-save middleware to validate username
-userSchema.pre('save', async function(next) {
-    if (this.isNew || this.isModified('username')) {
-        const usernameRegex = /^[a-zA-Z0-9]+$/;
-        const usernameTest = usernameRegex.test(this.username);
-        if (usernameTest === false) {
-            next({ message: 'Username must be alphanumeric.' });
-        }
-    }
-    next();
-});
+
 // Create the User model using the UserSchema
 const User = model('User', userSchema);
 
