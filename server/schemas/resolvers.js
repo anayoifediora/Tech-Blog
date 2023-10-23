@@ -53,7 +53,7 @@ const resolvers = {
             if(!user) {
                 throw new AuthenticationError('Incorrect email');
             }
-            const correctPassword = await user.isCorrectPssword(password);
+            const correctPassword = await user.isCorrectPassword(password);
 
             if (!correctPassword) {
                 throw new AuthenticationError('Incorrect Password!');

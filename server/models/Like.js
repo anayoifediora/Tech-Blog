@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-// const dateFormat = require('../utils/dateformat');
+const dateFormat = require('../utils/dateformat');
 
 // Create the Like Schema
 const likeSchema = new Schema({
@@ -10,7 +10,7 @@ const likeSchema = new Schema({
     createdAt: {
         type: Date,
         default: Date.now,
-        //get: (timestamp) => dateFormat(timestamp),
+        get: (timestamp) => dateFormat(timestamp),
     },
 },
 {
