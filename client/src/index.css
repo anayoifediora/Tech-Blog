@@ -6,7 +6,7 @@
   --bittersweet: rgba(254, 95, 85, 1);
 }
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Gabarito', sans-serif;
 }
 h1 {
   color: var(--ghost-white);
@@ -35,4 +35,12 @@ header {
 .menu li:hover {
   color: var(--bittersweet);
   text-decoration: underline;
+}
+.article-card {
+  margin: 20px;
+  padding: 5px;
+  background-color: var(--ghost-white);
+  border: 2px solid var(--columbia-blue);
+  width: fit-content;
+  font-size: 20px;
 }
