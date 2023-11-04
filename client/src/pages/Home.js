@@ -16,20 +16,20 @@ const Home = () => {
         <>
             <h3>Latest News</h3>
             {loading ? 
-            ( <div>Loading...</div>) : 
-            ( 
-                articles.map((article, index) => (
-                    <div className='article-card' key={index}>
-                        <h4>Written by: {article.articleAuthor} on <span>{article.createdAt}</span></h4>
-                        <img src={article.image}/>
-                        <h3>{article.title}</h3>
-                        <h5>Comments: {article.commentCount}</h5>
+                ( <div>Loading...</div>) : 
+        
+                ( 
+                    articles.map((article, index) => (
+                        <div className='article-card' key={index}>
+                            <h3>{article.title}</h3>
+                            <img className= "home-image" src={article.image} alt=""/>
+                            <h5 className = "article-author">By: {article.articleAuthor} on <span>{article.createdAt}</span></h5>
+                            <h5>Comments: {article.commentCount} <span>Likes: {article.likeCount}</span></h5>
+                        </div>
+                    ))
 
-
-                    </div>
-                ))
-
-            )} 
+                )
+            } 
         </>
     )
 }

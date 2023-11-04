@@ -40,7 +40,32 @@ header {
   margin: 20px;
   padding: 5px;
   background-color: var(--ghost-white);
-  border: 2px solid var(--columbia-blue);
-  width: fit-content;
+  border: 1px solid var(--columbia-blue);
+  width: 30vw;
   font-size: 20px;
+}
+.article-author {
+  margin: 10px;
+  font-style: italic;
+}
+
+.home-image {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+}
+
+.footer {
+  background-color: var(--glaucous);
+  color: var(--ghost-white);
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer i {
+  font-size: 3rem;
+  margin: 20px;
 }
