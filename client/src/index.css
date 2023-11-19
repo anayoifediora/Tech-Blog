@@ -142,6 +142,9 @@ input {
   font-size: 1.5rem;
   margin: 5px;
 }
+input:placeholder-shown {
+  font-size: 1.2rem;
+}
 .footer i {
   font-size: 3rem;
   margin: 20px;
