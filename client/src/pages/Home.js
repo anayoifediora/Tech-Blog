@@ -14,7 +14,8 @@ const Home = () => {
 
     return (
         <>
-            <h3>Latest News</h3>
+            <h2 className="homepage-title">Latest News</h2>
+            <button>Return to home</button>
             {loading ? 
                 ( <div>Loading...</div>) : 
         
