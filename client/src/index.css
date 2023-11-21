@@ -92,6 +92,13 @@ button:active {
   margin: 10px;
   font-style: italic;
 }
+.article-title {
+  text-decoration: none;
+
+}
+.article-title:hover {
+  color: var(--bittersweet);
+}
 
 .home-image {
   width: 80%;
@@ -114,7 +121,7 @@ button:active {
   background-color: var(--ghost-white);
   width: fit-content;
   height: 45vh;
-  border: solid 2px var(--columbia-blue);
+  border: solid 1.5px var(--paynes-gray);
 }
 .login-form h2, .signup-form h2 {
   font-size: 1.8rem;
@@ -145,6 +152,23 @@ input {
 input:placeholder-shown {
   font-size: 1.2rem;
 }
+
+.fullArticle-img {
+  width: 55%;
+  height: 70%;
+  border: 3px solid var(--paynes-gray);
+  object-fit: cover;
+}
+.fullArticle-text {
+  text-align: justify;
+  margin: 10px;
+  padding: 5px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  
+}
+
 .footer i {
   font-size: 3rem;
   margin: 20px;
