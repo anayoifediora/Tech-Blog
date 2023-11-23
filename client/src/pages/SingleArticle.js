@@ -18,7 +18,20 @@ const SingleArticle = () => {
         return <div>Loading....</div>;
     }
     console.log(article)
-    const { title, _id, articleAuthor, articleText, createdAt, image, likes, comments, commentCount, likeCount } = article
+    let { title, _id, articleAuthor, articleText, createdAt, 
+           image, likes, comments, commentCount, likeCount 
+          } = article
+
+    const iconStyle = {
+        fontSize:'1.7rem', 
+        margin: '10px'
+    }
+
+    const iconTextStyle = {
+        marginLeft: '8px', 
+        fontStyle:'normal'
+    }
+
     return (
         <div>
             {Auth.loggedIn() ? (
@@ -26,9 +39,16 @@ const SingleArticle = () => {
                 <div className="fullArticle-page">
                     <div className= "fullArticle-container">
                         <h2 className="fullArticle-title">{title}</h2>
+                        <p className="fullArticle-author"> Written by {articleAuthor} on  <span>{createdAt}</span></p>
                         <img className="fullArticle-img" src={image} alt=''/>
-                        <p className="fullArticle-author"> Written by {articleAuthor} on <span>{createdAt}</span></p>
+                        <div style={{marginTop: '15px', position:'relative', right: '400px'}}>
+                            <i className = "bi bi-chat-left" style={iconStyle}><span style={iconTextStyle}>{commentCount}</span></i>
+                            <i className = "bi bi-hand-thumbs-up" style={iconStyle}><span style={iconTextStyle}>{likeCount}</span></i>
+                        </div>
                         <p className="fullArticle-text">{articleText}</p>
+                    </div>
+                    <div>
+                        
                     </div>
 
                 </div>
