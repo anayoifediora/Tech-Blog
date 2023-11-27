@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import { QUERY_SINGLE_ARTICLE } from '../utils/queries';
 
 import Auth from '../utils/auth';
+import CommentForm from '../components/CommentForm';
+
 
 // SingleArticle is a component that displays a single article and its comments
 const SingleArticle = () => {
@@ -47,7 +49,22 @@ const SingleArticle = () => {
                         </div>
                         <p className="fullArticle-text">{articleText}</p>
                     </div>
-                    <div>
+                    <div className="comment-section">
+                        <button className='comment-btn'>Add comment</button>
+                        <CommentForm articleId ={_id}/>
+                        <div className= "comments">
+                            {comments.map((comment) => (
+                                <div key={comment._id}>
+                                    <p>{comment.commentAuthor} commented
+                                        <span> on {comment.createdAt}</span>
+                                    </p>
+                                    <div>
+                                        <p>{comment.commentText}</p>
+                                    </div>
+                                </div>
+                            ))}
+
+                        </div>
                         
                     </div>
 

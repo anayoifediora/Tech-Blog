@@ -157,6 +157,7 @@ input:placeholder-shown {
   display:flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 100vw;
 }
 .fullArticle-container {
@@ -179,6 +180,7 @@ input:placeholder-shown {
   display:flex;
   justify-content: center;
   text-align: justify;
+  line-height: 1.6;
   width:80%;
   margin-top: 15px;
   margin-bottom: 30px;
@@ -193,7 +195,36 @@ input:placeholder-shown {
   margin: 10px;
   font-size: 20px;
 }
+.comment-section {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1.5px solid var(--paynes-gray);
+  margin:10px;
+  width:80%;
+}
+.comment-form {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  background-color: var(--ghost-white);
+  width: 30vw;
+  height: 25vh;
+  border: solid 1.1px var(--paynes-gray);
 
+}
+.comment-btn {
+  width: 9vw;
+  height: 5vh;
+  margin: 10px;
+  font-size: 1.2rem;
+  border: 2px solid var(--paynes-gray);
+  border-radius: 5px;
+  background-color: var(--ghost-white);
+
+}
 .footer i {
   font-size: 3rem;
   margin: 20px;
@@ -204,6 +235,6 @@ input:placeholder-shown {
   text-align: center;
   padding: 10px;
   position: relative;
-  bottom: 0;
+  top: 500px;
   width: 100%;
 }
