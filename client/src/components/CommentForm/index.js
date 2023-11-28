@@ -42,7 +42,7 @@ const CommentForm = ({ articleId }) => {
     }
     return (
 
-        <form className = 'comment-form' onSubmit={handleFormSubmit}>
+        <form className = 'comment-form' id="comment-form" onSubmit={handleFormSubmit}>
             <label>Comments</label>
             <textarea 
                 placeholder='Add comment here, not more than 280 characters'

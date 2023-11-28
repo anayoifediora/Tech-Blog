@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/client';
 import { useParams } from 'react-router-dom';
 import { QUERY_SINGLE_ARTICLE } from '../utils/queries';
 
+
 import Auth from '../utils/auth';
 import CommentForm from '../components/CommentForm';
 
@@ -33,6 +34,21 @@ const SingleArticle = () => {
         marginLeft: '8px', 
         fontStyle:'normal'
     }
+    const displayCommentField = () => {
+        const commentFormStyle = `
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+            padding: 10px;
+            background-color: var(--ghost-white);
+            width: 35vw;
+            height: 25vh;
+            border: solid 1.1px var(--paynes-gray);`
+        
+        const commentForm = document.getElementById('comment-form');
+        commentForm.setAttribute('style', commentFormStyle);
+    }
 
     return (
         <div>
@@ -50,17 +66,17 @@ const SingleArticle = () => {
                         <p className="fullArticle-text">{articleText}</p>
                     </div>
                     <div className="comment-section">
-                        <button className='comment-btn'>Add comment</button>
+                        <button className='comment-btn' onClick={displayCommentField}>Add comment</button>
                         <CommentForm articleId ={_id}/>
                         <div className= "comments">
                             {comments.map((comment) => (
-                                <div key={comment._id}>
-                                    <p>{comment.commentAuthor} commented
+                                <div key={comment._id} className = 'comment'>
+                                    <p className = "comment-author">{comment.commentAuthor} commented
                                         <span> on {comment.createdAt}</span>
                                     </p>
-                                    <div>
-                                        <p>{comment.commentText}</p>
-                                    </div>
+                                    
+                                    <p className = "comment-text">{comment.commentText}</p>
+                                    
                                 </div>
                             ))}
 

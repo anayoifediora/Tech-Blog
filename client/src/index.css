@@ -59,7 +59,7 @@ button {
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2), 0px -2px 2px rgba(255, 255, 255, 0.5) inset, 0 2px 2px rgba(255, 255, 255, 0.8) inset;
   background: linear-gradient(#1D1, #0ebc0e);
   text-shadow: 0 -2px #0c960c;
-  font-size: 1.1rem;
+  font-size: 1rem;
   height: 35px;
   font-size: 25px;
   margin:10px;
@@ -204,7 +204,8 @@ input:placeholder-shown {
   width:80%;
 }
 .comment-form {
-  display:flex;
+  display: none;
+  /* display:flex;
   flex-direction: column;
   align-items: center;
   margin: 10px;
@@ -212,19 +213,47 @@ input:placeholder-shown {
   background-color: var(--ghost-white);
   width: 30vw;
   height: 25vh;
-  border: solid 1.1px var(--paynes-gray);
+  border: solid 1.1px var(--paynes-gray); */
 
 }
 .comment-btn {
   width: 9vw;
   height: 5vh;
   margin: 10px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   border: 2px solid var(--paynes-gray);
   border-radius: 5px;
   background-color: var(--ghost-white);
+}
+.comment-btn:hover {
+  cursor: pointer;
+  background-color: var(--columbia-blue);
+}
+.comment {
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 10px;
+  padding: 10px;
+  width: 35vw;
+  border: solid 1.1px var(--paynes-gray);
 
 }
+.comment-author {
+  font-style: italic;
+  font-size: 17px;
+}
+.comment-text {
+display: flex;
+background-color: var(--ghost-white);
+border-radius: 3px;
+width: 35vw;
+margin: 0px;
+padding: 5px;
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-size: 17px;
+}
+
 .footer i {
   font-size: 3rem;
   margin: 20px;
