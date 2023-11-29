@@ -200,6 +200,7 @@ input:placeholder-shown {
   flex-direction: column;
   justify-content: center;
   border: 1.5px solid var(--paynes-gray);
+  background: linear-gradient(to right, var(--ghost-white), var(--columbia-blue));
   margin:10px;
   width:80%;
 }
@@ -217,10 +218,9 @@ input:placeholder-shown {
 
 }
 .comment-btn {
-  width: 9vw;
+  width: 8vw;
   height: 5vh;
   margin: 10px;
-  font-size: 1rem;
   border: 2px solid var(--paynes-gray);
   border-radius: 5px;
   background-color: var(--ghost-white);
@@ -245,7 +245,6 @@ input:placeholder-shown {
 }
 .comment-text {
 display: flex;
-background-color: var(--ghost-white);
 border-radius: 3px;
 width: 35vw;
 margin: 0px;

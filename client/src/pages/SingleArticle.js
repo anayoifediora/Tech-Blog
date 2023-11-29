@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { useParams } from 'react-router-dom';
 import { QUERY_SINGLE_ARTICLE } from '../utils/queries';
+import { useMutation } from '@apollo/client';
+import { ADD_LIKE } from '../utils/mutation';
 
 
 import Auth from '../utils/auth';
@@ -10,6 +13,16 @@ import CommentForm from '../components/CommentForm';
 
 // SingleArticle is a component that displays a single article and its comments
 const SingleArticle = () => {
+    const [like, setLike] = useState({ likeAuthor: '', articleId: '' });
+    const [userProfile, setUserProfile] = useState(null);
+
+    useEffect(() => {
+        const profile = Auth.getProfile().data;
+        setUserProfile(profile);
+    }, []);
+
+    const [addLike, { error }] = useMutation(ADD_LIKE);
+
     const { articleId } = useParams();
 
     const { loading, data } = useQuery(QUERY_SINGLE_ARTICLE, {
@@ -25,6 +38,23 @@ const SingleArticle = () => {
            image, likes, comments, commentCount, likeCount 
           } = article
 
+    const handleLike = async (event) => {
+        
+        try {
+            const { data, error } = await addLike({
+                variables: {
+                    ...like,
+                    likeAuthor: userProfile.username,
+                    articleId
+                }
+            }); 
+            console.log(data, error);
+            setLike(like)
+        } catch(e) {
+            console.error(e)
+        }
+        window.location.reload(`/articles/${articleId}`)
+    }
     const iconStyle = {
         fontSize:'1.7rem', 
         margin: '10px'
@@ -63,10 +93,18 @@ const SingleArticle = () => {
                             <i className = "bi bi-chat-left" style={iconStyle}><span style={iconTextStyle}>{commentCount}</span></i>
                             <i className = "bi bi-hand-thumbs-up" style={iconStyle}><span style={iconTextStyle}>{likeCount}</span></i>
                         </div>
+                        {/* <p>liked by</p>
+                        {likes.map((like) => (
+                            <p key={like._id}>{like.likeAuthor}</p>
+                        ))} */}
                         <p className="fullArticle-text">{articleText}</p>
                     </div>
+                    <div>
+                    <button className='comment-btn' onClick={displayCommentField}>Comment</button>
+                        <button className = 'comment-btn' onClick={handleLike}>Like</button>
+                    </div>
                     <div className="comment-section">
-                        <button className='comment-btn' onClick={displayCommentField}>Add comment</button>
+                        
                         <CommentForm articleId ={_id}/>
                         <div className= "comments">
                             {comments.map((comment) => (

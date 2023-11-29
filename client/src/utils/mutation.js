@@ -41,3 +41,18 @@ export const ADD_COMMENT = gql`
         }
     }
 `
+//Mutation to like an article
+export const ADD_LIKE = gql`
+    mutation Mutation($articleId: ID!, $likeAuthor: String!) {
+        addLike(articleId: $articleId, likeAuthor: $likeAuthor) {
+        likes {
+            _id
+            createdAt
+            likeAuthor
+        }
+        likeCount
+        _id
+        createdAt
+        }
+    }
+`
