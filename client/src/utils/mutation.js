@@ -25,3 +25,34 @@ export const ADD_USER = gql`
         }
     }
 `
+//Mutation to add a comment 
+export const ADD_COMMENT = gql`
+    mutation Mutation($articleId: ID!, $commentText: String!, $commentAuthor: String!) {
+        addComment(articleId: $articleId, commentText: $commentText, commentAuthor: $commentAuthor) {
+        _id
+        createdAt
+        comments {
+            createdAt
+            commentText
+            commentAuthor
+            _id
+        }
+        commentCount
+        }
+    }
+`
+//Mutation to like an article
+export const ADD_LIKE = gql`
+    mutation Mutation($articleId: ID!, $likeAuthor: String!) {
+        addLike(articleId: $articleId, likeAuthor: $likeAuthor) {
+        likes {
+            _id
+            createdAt
+            likeAuthor
+        }
+        likeCount
+        _id
+        createdAt
+        }
+    }
+`

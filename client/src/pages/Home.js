@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_ARTICLES } from '../utils/queries';
+import { Link } from 'react-router-dom';
 
 
 const Home = () => {
@@ -22,7 +23,7 @@ const Home = () => {
                 ( 
                     articles.map((article, index) => (
                         <div className='article-card' key={index}>
-                            <h3>{article.title}</h3>
+                            <Link className="article-title" to = {`/articles/${article._id}`}><h3 >{article.title}</h3></Link>
                             <img className= "home-image" src={article.image} alt=""/>
                             <h5 className = "article-author">By: {article.articleAuthor} on <span>{article.createdAt}</span></h5>
                             <h5>Comments: {article.commentCount} <span>Likes: {article.likeCount}</span></h5>

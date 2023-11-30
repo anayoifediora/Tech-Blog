@@ -8,6 +8,7 @@ import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home'
+import SingleArticle from './pages/SingleArticle';
 import Login from './pages/Login'
 import Signup from './pages/Signup';
 
@@ -45,6 +46,7 @@ function App() {
           <div>
             <Routes>
               <Route path ='/' element = {<Home/>}/>
+              <Route path = '/articles/:articleId' element={<SingleArticle/>}/>
               <Route path = '/login' element = {<Login/>}/>
               <Route path = '/signup' element = {<Signup/>}/>
             </Routes>
