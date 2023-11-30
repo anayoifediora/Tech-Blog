@@ -19,8 +19,9 @@ const SingleArticle = () => {
     useEffect(() => {
         const profile = Auth.getProfile().data;
         setUserProfile(profile);
+        console.log(profile)
     }, []);
-
+    
     const [addLike, { error }] = useMutation(ADD_LIKE);
 
     const { articleId } = useParams();
