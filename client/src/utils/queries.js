@@ -41,3 +41,19 @@ export const QUERY_SINGLE_ARTICLE = gql`
         }
     }    
 `
+// Query to obtain articles by a single user.
+export const QUERY_MY_ARTICLES = gql`
+    query Query($email: String!) {
+        user(email: $email) {
+        email
+        articles {
+            _id
+            title
+            likeCount
+            commentCount
+            createdAt
+            articleText
+        }
+        }
+    }
+`
