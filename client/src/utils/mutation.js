@@ -56,3 +56,20 @@ export const ADD_LIKE = gql`
         }
     }
 `
+
+// Mutation to add an article
+
+export const ADD_ARTICLE = gql`
+    mutation Mutation($title: String!, $articleText: String!, $articleAuthor: String!, $image: String) {
+        addArticle(title: $title, articleText: $articleText, articleAuthor: $articleAuthor, image: $image) {
+        _id
+        createdAt
+        title
+        articleAuthor
+        articleText
+        image
+        commentCount
+        likeCount
+        }
+    }
+`

@@ -4,6 +4,7 @@ import { useQuery } from '@apollo/client';
 import { useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
 
+import ArticleForm from '../components/ArticleForm'
 import { QUERY_MY_ARTICLES } from '../utils/queries';
 import Auth from '../utils/auth';
 
@@ -29,23 +30,8 @@ const Dashboard = () => {
                     </div>
                 )}
             </section>
-            <section className = "create-article">
-                <h2 style={{fontSize: '1.7rem'}}>Write Article</h2>
-                <form className = 'article-form'>
-                    <div>
-                        <label >Title</label>
-                        <input style={{ width: '50vw'}}/>
-                    </div>
-                    <div>
-                        <label>Description</label>
-                        <textarea
-                        className = 'article-text'></textarea>
-                    </div>
-                    <button>Submit</button>
-
-                </form>
-
-            </section>
+            <ArticleForm/>
+            
         </div>
     )
 }

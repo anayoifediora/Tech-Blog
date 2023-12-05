@@ -23,7 +23,7 @@ header {
 }
 .menu {
   display: flex;
-  text-decoration: none;
+  text-decoration: underline;
   font-size: 1.5rem;
   list-style: none;
   align-items: center;
@@ -254,16 +254,21 @@ padding: 5px;
 font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 font-size: 17px;
 }
+.comment-text:hover {
+  background-color: var(--columbia-blue);
+}
 .user-articles-section {
   display:flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--columbia-blue);
   border: solid 1.1px var(--paynes-gray);
+  border-radius: 5px;
   width: 35vw;
   height: fit-content;
   padding: 10px;
-  margin: 15px;
+  margin: 25px;
+  margin-top: 30px;
 }
 .user-articles-section p {
   margin: 15px;
@@ -283,9 +288,11 @@ font-size: 17px;
 .create-article {
   background-color: var(--columbia-blue);
   border: solid 1.1px var(--paynes-gray);
+  border-radius: 5px;
   width: 55vw;
   height:fit-content;
-  margin:15px;
+  margin:25px;
+  margin-top: 30px;
 }
 .article-form {
   display:flex;
@@ -299,6 +306,9 @@ font-size: 17px;
 .article-text {
   width: 50vw;
   height: 80vh;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
 }
 .dashboard {
   display:flex;
