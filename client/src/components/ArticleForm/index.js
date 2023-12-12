@@ -51,10 +51,12 @@ const ArticleForm = () => {
                                name="title"/>
                     </div>
                     <div>
+                        <label>Upload Image</label>
                         <input type="file"
                                value={article.image}
                                onChange={handleChange}
-                               name='image'/>
+                               name='image'
+                               accept='image/*'/>
                         {/* <button>Upload</button> */}
                     </div>
                     <div>
