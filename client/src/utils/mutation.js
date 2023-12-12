@@ -56,3 +56,56 @@ export const ADD_LIKE = gql`
         }
     }
 `
+
+// Mutation to add an article
+
+export const ADD_ARTICLE = gql`
+    mutation Mutation($title: String!, $articleText: String!, $articleAuthor: String!, $image: String) {
+        addArticle(title: $title, articleText: $articleText, articleAuthor: $articleAuthor, image: $image) {
+        _id
+        createdAt
+        title
+        articleAuthor
+        articleText
+        image
+        commentCount
+        likeCount
+        }
+    }
+`
+//Mutation to remove an article
+
+export const REMOVE_ARTICLE = gql`
+    mutation Mutation($articleId: ID!) {
+        removeArticle(articleId: $articleId) {
+        _id
+        title
+        articleText
+        articleAuthor
+        image
+        commentCount
+        likeCount
+        comments {
+            _id
+            commentAuthor
+            commentText
+            createdAt
+        }
+        likes {
+            _id
+            createdAt
+            likeAuthor
+        }
+        }
+    }
+`
+
+//Mutation to update an article
+export const UPDATE_ARTICLE = gql`
+    mutation Mutation($articleId: ID!, $title: String, $articleText: String) {
+        updateArticle(articleId: $articleId, title: $title, articleText: $articleText) {
+        title
+        articleText
+        }
+    }
+`

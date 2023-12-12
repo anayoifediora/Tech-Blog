@@ -8,10 +8,13 @@ const Home = () => {
     const  { loading, data } = useQuery(QUERY_ARTICLES);
     const [articles, setArticles] = useState([]);
     
+    
+
     useEffect(() => {
         setArticles(data?.articles || []);
         console.log(data)
     }, [data]);
+
 
     return (
         <>
@@ -27,6 +30,7 @@ const Home = () => {
                             <img className= "home-image" src={article.image} alt=""/>
                             <h5 className = "article-author">By: {article.articleAuthor} on <span>{article.createdAt}</span></h5>
                             <h5>Comments: {article.commentCount} <span>Likes: {article.likeCount}</span></h5>
+                            {console.log(article.image)}
                         </div>
                     ))
 
