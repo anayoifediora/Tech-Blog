@@ -14,14 +14,14 @@ import CommentForm from '../components/CommentForm';
 // SingleArticle is a component that displays a single article and its comments
 const SingleArticle = () => {
     const [like, setLike] = useState({ likeAuthor: '', articleId: '' });
-    const [userProfile, setUserProfile] = useState(null);
+    // const [userProfile, setUserProfile] = useState(null);
 
-    useEffect(() => {
-        const profile = Auth.getProfile().data;
-        setUserProfile(profile);
-        console.log(profile)
-    }, []);
-    
+    // useEffect(() => {
+    //     const profile = Auth.getProfile().data;
+    //     setUserProfile(profile);
+    //     console.log(profile)
+    // }, []);
+
     const [addLike, { error }] = useMutation(ADD_LIKE);
 
     const { articleId } = useParams();
@@ -40,7 +40,7 @@ const SingleArticle = () => {
           } = article
 
     const handleLike = async (event) => {
-        
+        const userProfile = Auth.getProfile().data;
         try {
             const { data, error } = await addLike({
                 variables: {
@@ -80,7 +80,8 @@ const SingleArticle = () => {
         const commentForm = document.getElementById('comment-form');
         commentForm.setAttribute('style', commentFormStyle);
     }
-
+    console.log(articleText)
+    
     return (
         <div>
             {Auth.loggedIn() ? (
@@ -99,6 +100,7 @@ const SingleArticle = () => {
                                 <p key={like._id}>{like.likeAuthor}</p>
                             ))} */}
                             <p className="fullArticle-text">{articleText}</p>
+            
                         </div>
                         <div>
                         <button className='comment-btn' onClick={displayCommentField}>Comment</button>
@@ -126,7 +128,7 @@ const SingleArticle = () => {
                     </div>
                 </>    
             ) : (
-                <h4>
+                <h4 style= {{fontSize: '30px', color: "var(--bittersweet)"}}>
                     Kindly login to view this article
                 </h4>
             )}
