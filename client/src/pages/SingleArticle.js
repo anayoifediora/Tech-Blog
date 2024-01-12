@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { QUERY_SINGLE_ARTICLE } from '../utils/queries';
 import { useMutation } from '@apollo/client';
 import { ADD_LIKE } from '../utils/mutation';
@@ -88,6 +89,7 @@ const SingleArticle = () => {
                 <>
                     <div className="fullArticle-page">
                         <div className= "fullArticle-container">
+                            
                             <h2 className="fullArticle-title">{title}</h2>
                             <p className="fullArticle-author"> Written by {articleAuthor} on  <span>{createdAt}</span></p>
                             <img className="fullArticle-img" src={image} alt=''/>

@@ -30,25 +30,30 @@ header {
   align-items: center;
   position: relative;
   left: 820px;
+  text-decoration: none;
+  
 }
 .menu li {
-  padding: 1.2rem; 
+  padding: 1.2rem;
+}
+.nav-link {
+  text-decoration: none;
 }
 .nav-link:link {
   color: var(--ghost-white);
-  text-decoration: none;
+  
 }
 .nav-link:visited {
-  color: var(--ghost-white );
-  text-decoration:dashed;
+  color: rgb(184, 214, 184);
+  
 }
 .nav-link:hover {
   color: var(--bittersweet);
   cursor: pointer;
 }
 .nav-link:active {
-  color: var(--paynes-gray);
-  text-decoration: underline;
+  color: black;
+  
 }
 .username {
   color: var(--bittersweet);
@@ -58,12 +63,23 @@ header {
   margin: 2px;
   padding: 0px;
 }
+.home {
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
 .articles-container {
   display: grid;
-  grid-template-columns: auto auto auto;
-  margin: 30px;
-  margin-left: 100px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  margin: 20px;
+  grid-auto-flow: row;
+  
 
+}
+.news {
+  grid-column-start: 2;
+  grid-column-end: span 1;
+  grid-row-start: 1;
 }
 .homepage-title {
   font-size: 2.5rem;
@@ -88,6 +104,7 @@ button:hover {
   background: #0ebc0e;
   background: linear-gradient(#0ebc0e, #0c960c);
   border-color: #064f06;
+
 }
 
 button:active {
@@ -97,19 +114,26 @@ button:active {
   background: #0c960c;
   background: linear-gradient(#0c960c, #0ebc0e);
 }
-.article-card {
-  padding: 5px;
-  background-color: var(--articlecard);
-  border: 1px solid var(--columbia-blue);
-  border-radius: 5px;
-  width: 25vw;
+.article-card, .news-card {
+  border: 1px solid var(--paynes-gray);
+  width: 24vw;
   height: fit-content;
   font-size: 20px;
-  margin-top: 20px;
+  margin-top: 10px;
+}
+
+.article-card .comment-count {
+  display: flex;
+  background-color: var(--glaucous);
+  justify-content: space-evenly;
+  align-items: center;
+  color: var(--ghost-white);
+  height: 55px;
+  margin-bottom: 0px;
 }
 .article-author {
   margin: 7px;
-  font-style: italic;
+  font-style: normal;
   font-size: 18px;
 }
 .article-title {
@@ -121,8 +145,9 @@ button:active {
 }
 
 .home-image {
-  width: 75%;
+  width: 100%;
   height: 55%;
+  margin: 0px;
   object-fit: cover;
 }
 .login-page, .signup-page {
@@ -216,6 +241,7 @@ input:placeholder-shown {
   margin: 10px;
   font-size: 20px;
 }
+
 .comment-section {
   display:flex;
   flex-direction: column;
@@ -345,15 +371,20 @@ font-size: 17px;
   border: 1px solid var(--paynes-gray);
 }
 .footer i {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin: 20px;
 }
 .footer {
   background-color: var(--glaucous);
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: var(--ghost-white);
   text-align: center;
   padding: 10px;
   position: relative;
-  top: 500px;
+  top: 550px;
   width: 100%;
+  height: 150px;
 }
