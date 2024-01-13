@@ -46,7 +46,7 @@ const CommentForm = ({ articleId }) => {
             <label>Comments</label>
             <textarea 
                 placeholder='Add comment here, not more than 280 characters'
-                style={{width: 'inherit', height: 'inherit'}}
+                style={{width: 'inherit', height: 'inherit', fontFamily: 'Gill Sans', fontSize: '19px'}}
                 value={comment.commentText}
                 name="commentText"
                 onChange={handleChange}>
