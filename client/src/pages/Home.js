@@ -20,7 +20,7 @@ const Home = () => {
 
     useEffect(() => {
         
-        let requestUrl = "https://newsapi.org/v2/everything?domains=techcrunch.com,thenextweb.com&from=2024-01-11&to=2024-01-11&apiKey=4b88cfe067334fcea64575c884088db9"
+        let requestUrl = "https://newsapi.org/v2/everything?domains=techcrunch.com,thenextweb.com&from=2024-01-12&to=2024-01-12&apiKey=4b88cfe067334fcea64575c884088db9"
         
         fetch(requestUrl)
         .then(function(response) {
@@ -38,13 +38,15 @@ const Home = () => {
     return (
         <>
             {/* <h5 className = 'username'>Logged in as {userProfile.username}</h5> */}
-            <h2 className="homepage-title">Latest News</h2>
+            <h2 className="homepage-title">News and Articles</h2>
             {loading ? 
                 ( <div>Loading...</div>) : 
         
                 (   
                 <div className="home">
-                    <div className = 'articles-container'>{
+                    <div className = 'articles-container'>
+        
+                        {                        
                         articles.map((article, index) => (
                             <div className='article-card' key={index}>
                                 {/* <Link className="article-title" to = {`/articles/${article._id}`}><h3 style={{ height: '50px', margin: '15px' }}>{article.title}</h3></Link> */}
@@ -57,13 +59,14 @@ const Home = () => {
                         ))}              
                     </div>
                     <div className="news">
+                        <h2 style={{textDecoration: "underline"}}>Other News</h2>
                         {
                         news.map((article, index) => (
                             <div className='news-card' key={index}>
                                 {/* <Link className="article-title" to = {`/articles/${article._id}`}><h3 style={{ height: '50px', margin: '15px' }}>{article.title}</h3></Link> */}
                                 <img className= "home-image" src={article.urlToImage} alt=""/>
-                                <Link className="article-title" to = {article.url}><h3 style={{ height: '30px', marginTop: '5px' }}>{article.title}</h3></Link>
-                                <h5 className = "article-author">{article.author} on <span>{article.publishedAt}</span></h5>
+                                <Link className="news-title" to = {article.url}><h3 style={{ height: '30px', marginTop: '5px' }}>{article.title}</h3></Link>
+                                <h5 className = "news-author">{article.author} on <span>{article.publishedAt}</span></h5>
                                 
                             </div>
                         ))}
