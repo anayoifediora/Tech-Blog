@@ -93,7 +93,7 @@ const SingleArticle = () => {
                             <h2 className="fullArticle-title">{title}</h2>
                             <p className="fullArticle-author"> Written by {articleAuthor} on  <span>{createdAt}</span></p>
                             <img className="fullArticle-img" src={image} alt=''/>
-                            <div style={{marginTop: '15px', position:'relative', right: '400px'}}>
+                            <div className="icons" style={{marginTop: '15px', position:'relative', right: '400px'}}>
                                 <i className = "bi bi-chat-left" style={iconStyle}><span style={iconTextStyle}>{commentCount}</span></i>
                                 <i className = "bi bi-hand-thumbs-up" style={iconStyle}><span style={iconTextStyle}>{likeCount}</span></i>
                             </div>
@@ -105,7 +105,7 @@ const SingleArticle = () => {
             
                         </div>
                         <div>
-                        <button className='comment-btn' onClick={displayCommentField}>Comment</button>
+                            <button className='comment-btn' onClick={displayCommentField}>Comment</button>
                             <button className = 'comment-btn' onClick={handleLike}>Like</button>
                         </div>
                         <div className="comment-section">

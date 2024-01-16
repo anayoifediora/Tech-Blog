@@ -8,9 +8,10 @@
 }
 body {
   font-family: 'Gabarito', sans-serif;
+  
 }
 h1 {
-  color: rgb(92, 92, 175);
+  color: rgb(184, 214, 184);
   font-size: 3.5rem;
   margin-left: 20px;
   /* color: var(--bittersweet) */
@@ -18,7 +19,8 @@ h1 {
 header {
   display: flex;
   flex-direction: row;
-  background: linear-gradient(to right, var(--columbia-blue), var(--glaucous));
+  /* background: linear-gradient(to right, var(--columbia-blue), var(--glaucous)); */
+  background: url("../public/istockphoto-1464561980-1024x1024.jpg");
   color: var(--ghost-white);
   height: auto;
   justify-content: space-between;
@@ -82,7 +84,11 @@ header {
   flex-direction: column;
   align-items: center;
   align-content: center;
-  background-color: var(--columbia-blue);
+  border: 1px solid var(--paynes-gray);
+  background-color: var(--ghost-white);
+  margin-top: 15px;
+  padding-bottom: 15px;
+  height: fit-content;
 }
 .news-card {
   border: 2px solid var(--paynes-gray);
@@ -90,6 +96,7 @@ header {
   height: fit-content;
   font-size: 20px;
   margin: 15px;
+  
 }
 .news-title {
   text-decoration: none;
@@ -102,7 +109,11 @@ header {
 }
 .news-author {
   font-style: italic;
-  font-size: 15px;
+  font-size: 18px;
+  background-color: var(--glaucous);
+  padding: 10px;
+  margin-bottom: 0px;
+  color: var(--ghost-white);
 }
 .homepage-title {
   font-size: 2.5rem;
@@ -373,6 +384,9 @@ font-size: 17px;
   width: 'inherit';
   height: 'inherit';
 }
+.article-form div input {
+  width: 50vw;
+}
 .article-text {
   width: 50vw;
   height: 80vh;
@@ -449,8 +463,61 @@ font-size: 17px;
   }
   .login-form {
     width: 80%;
+    height: auto;
   }
-  .login-form div input {
+  .login-form div input, .signup-form div input {
     width: 100%;
   }
+  .signup-form {
+    width: 80%;
+    height: auto;
+  }
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .user-articles-section, 
+  .user-article, 
+  .create-article {
+    width: 95%;
+  }
+  .article-form div input {
+    width: 400px;
+    font-size: 15px;
+  }
+  .article-text {
+    width: 400px;
+    font-size: 15px;
+  }
+  .fullArticle-title {
+    font-size: 1.5rem;  
+  }
+  .fullArticle-text, .comment {
+    width: 80%;
+    font-size: 15px;
+  }
+  .fullArticle-author {
+    font-size: 15px;
+  }
+  .comments {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .comment-author, .comment-text {
+    font-size: 13px;
+    text-align:left;
+    width: 90%;
+  }
+  .comment-btn {
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+  }
+  .icons {
+    position: relative;
+    left: -75px;
+  }
+  
 }

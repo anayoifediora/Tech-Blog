@@ -45,8 +45,7 @@ const ArticleForm = () => {
                 <form className = 'article-form' onSubmit={handleFormSubmit}>
                     <div>
                         <label >Title</label>
-                        <input style={{ width: '50vw'}}
-                               value ={article.title}
+                        <input value ={article.title}
                                onChange={handleChange}
                                name="title"/>
                     </div>
