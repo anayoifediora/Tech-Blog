@@ -100,7 +100,7 @@ header {
 }
 .news-title {
   text-decoration: none;
-  font-size: 17px;
+  font-size: 1rem;
   flex-grow: 3;
 
 }
@@ -108,7 +108,6 @@ header {
   color: var(--bittersweet);
 }
 .news-author {
-  font-style: italic;
   font-size: 18px;
   background-color: var(--glaucous);
   padding: 10px;
@@ -151,7 +150,7 @@ button:active {
 .article-card {
   border: 1px solid var(--paynes-gray);
   width: 24vw;
-  height: fit-content;
+  /* height: fit-content; */
   font-size: 20px;
   margin-top: 10px;
   margin-bottom: 30px;
@@ -179,12 +178,12 @@ button:active {
   color: var(--bittersweet);
 }
 
-.home-image {
+.home-image, .news-image {
   width: 100%;
   height: auto;
   margin: 0px;
   object-fit: cover;
-}
+} 
 .login-page, .signup-page {
   display: flex;
   flex-direction: column;
@@ -283,7 +282,7 @@ input:placeholder-shown {
   justify-content: center;
   border: 1.5px solid var(--paynes-gray);
   margin:10px;
-  width:80%;
+  width:fit-content;
 }
 .comment-form {
   display: none;
@@ -427,7 +426,7 @@ font-size: 17px;
   height: 150px;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 520px) {
   
   header {
     display: flex;
@@ -442,6 +441,9 @@ font-size: 17px;
   }
   .menu {
     margin: 10px;
+  }
+  .menu li {
+    font-size: 1.2rem;
   }
   .homepage-title {
     font-size: 2rem;
@@ -461,16 +463,12 @@ font-size: 17px;
   .article-card, .news-card {
     width: 85%;
   }
-  .login-form {
+  .login-form, .signup-form {
     width: 80%;
     height: auto;
   }
   .login-form div input, .signup-form div input {
     width: 100%;
-  }
-  .signup-form {
-    width: 80%;
-    height: auto;
   }
   .dashboard {
     display: flex;
@@ -500,7 +498,7 @@ font-size: 17px;
   .fullArticle-author {
     font-size: 15px;
   }
-  .comments {
+  .comments, .comment-section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -515,9 +513,237 @@ font-size: 17px;
     height: 40px;
     font-size: 15px;
   }
+  
   .icons {
     position: relative;
     left: -75px;
   }
   
+}
+
+@media only screen and (min-width: 520px) and (max-width: 768px) {
+   header h1 {
+     font-size: 2.3rem;
+   }
+   header {
+    width: 105%;
+   }
+   .menu li {
+     font-size: 1.1rem;
+     padding: 0.6rem;
+   }
+   .homepage-title {
+    font-size: 1.5rem;
+   }
+   .home {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+   }
+   .articles-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+   }
+   .news {
+    width: 50%
+   }
+   .article-card, .news-card {
+    width: 90%;
+   }
+   .article-title, .news-title {
+    font-size: 0.8rem;    
+   }
+   .article-author, .comment-count, .news-author {
+    font-size: 0.9rem;
+   }
+  .news-author {
+    margin-top: 30px;
+  }
+    .login-form {
+      width: 70%;
+      height: auto;
+    }
+    .login-form div input, .signup-form div input {
+      width: 300px;
+    }
+    .signup-form {
+      width: 80%;
+      height: auto;
+    }
+    .dashboard {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .user-articles-section, 
+    .user-article, 
+    .create-article {
+      width: 95%;
+    }
+    .article-form div input {
+      width: 600px;
+      font-size: 0.9rem;
+    }
+    .article-text {
+      width: 600px;
+      font-size: 15px;
+    }
+    .fullArticle-title {
+      font-size: 1.5rem;  
+    }
+    .fullArticle-text, .comment {
+      width: 80%;
+      font-size: 15px;
+    }
+    .fullArticle-author {
+      font-size: 15px;
+    }
+    .comment-section, .comments {
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80%;
+    }
+    .comment-author, .comment-text {
+      font-size: 13px;
+      text-align:left;
+      width: 90%;
+    }
+    .comment-btn {
+      width: 100px;
+      height: 40px;
+      font-size: 15px;
+    }
+    .icons {
+      position: relative;
+      left: -155px;
+    }
+    .icons span, .icons i {
+      font-size: 1.5rem;
+    
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+  header {
+    width: 105%;
+  }
+  .homepage-title {
+    font-size: 1.7rem;
+  }
+  .home {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .articles-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+  }
+  .news {
+    width: 50%
+  }
+  .article-card, .news-card {
+    width: 90%;
+  }
+  .article-title, .news-title {
+    font-size: 0.85rem;    
+  }
+  .article-author, .comment-count, .news-author {
+    font-size: 0.9rem;
+  }
+  .news-author {
+    margin-top: 30px;
+  }
+  .login-form {
+    width: 70%;
+    height: auto;
+  }
+  .login-form div input, .signup-form div input {
+    width: 450px;
+  }
+  .signup-form {
+    width: 70%;
+    height: auto;
+  }
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .user-articles-section, 
+  .user-article, 
+  .create-article {
+    width: 95%;
+  }
+  .article-form div input {
+    width: 600px;
+    font-size: 0.9rem;
+  }
+  .article-text {
+    width: 600px;
+    font-size: 15px;
+  }
+  .fullArticle-title {
+    font-size: 1.5rem;  
+  }
+  .fullArticle-text, .comment {
+    width: 80%;
+    font-size: 15px;
+  }
+  .fullArticle-author {
+    font-size: 15px;
+  }
+  .comments, .comment-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+  }
+  .comment-author, .comment-text {
+    font-size: 13px;
+    text-align:left;
+    width: 90%;
+  }
+  .comment-btn {
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+  }
+  .icons {
+    position: relative;
+    left: -215px;
+  }
+  .icons span {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1600px) {
+  .news-card {
+    width: 30vw;
+  }
+  .news {
+    width: 35vw;
+    margin-left: 1px;
+  }
+  .article-title, .news-title {
+    font-size: 0.85rem;    
+  }
+  .article-author, .comment-count, .news-author {
+    font-size: 0.9rem;
+  }
+  .news-author {
+    margin-top: 30px;
+  }
+  .signup-form {
+    height: auto;
+  }
 }

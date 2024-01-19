@@ -68,7 +68,7 @@ const Home = () => {
                         news.map((article, index) => (
                             <div className='news-card' key={index}>
                                 {/* <Link className="article-title" to = {`/articles/${article._id}`}><h3 style={{ height: '50px', margin: '15px' }}>{article.title}</h3></Link> */}
-                                <img className= "home-image" src={article.urlToImage} alt=""/>
+                                <img className= "news-image" src={article.urlToImage} alt=""/>
                                 <Link className="news-title" to = {article.url} target="_blank"><h3 style={{ height: '30px', marginTop: '5px' }}>{article.title}</h3></Link>
                                 <h5 className = "news-author">{article.author} on <span>{article.publishedAt}</span></h5>
                                 

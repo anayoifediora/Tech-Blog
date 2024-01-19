@@ -74,7 +74,7 @@ const SingleArticle = () => {
             margin: 10px;
             padding: 10px;
             background-color: var(--ghost-white);
-            width: 35vw;
+            width: 80%;
             height: 25vh;
             border: solid 1.1px var(--paynes-gray);`
         
@@ -109,7 +109,7 @@ const SingleArticle = () => {
                             <button className = 'comment-btn' onClick={handleLike}>Like</button>
                         </div>
                         <div className="comment-section">
-                            
+                            <h2>Comments</h2>
                             <CommentForm articleId ={_id}/>
                             <div className= "comments">
                                 {comments.map((comment) => (
