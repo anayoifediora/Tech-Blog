@@ -8,9 +8,10 @@
 }
 body {
   font-family: 'Gabarito', sans-serif;
+  
 }
 h1 {
-  color: rgb(92, 92, 175);
+  color: rgb(184, 214, 184);
   font-size: 3.5rem;
   margin-left: 20px;
   /* color: var(--bittersweet) */
@@ -18,9 +19,11 @@ h1 {
 header {
   display: flex;
   flex-direction: row;
-  background: linear-gradient(to right, var(--columbia-blue), var(--glaucous));
+  /* background: linear-gradient(to right, var(--columbia-blue), var(--glaucous)); */
+  background: url("../public/istockphoto-1464561980-1024x1024.jpg");
   color: var(--ghost-white);
   height: auto;
+  justify-content: space-between;
 }
 .menu {
   display: flex;
@@ -28,9 +31,8 @@ header {
   font-size: 1.5rem;
   list-style: none;
   align-items: center;
-  position: relative;
-  left: 820px;
   text-decoration: none;
+  padding-right: 20px;
   
 }
 .menu li {
@@ -82,7 +84,11 @@ header {
   flex-direction: column;
   align-items: center;
   align-content: center;
-  background-color: var(--columbia-blue);
+  border: 1px solid var(--paynes-gray);
+  background-color: var(--ghost-white);
+  margin-top: 15px;
+  padding-bottom: 15px;
+  height: fit-content;
 }
 .news-card {
   border: 2px solid var(--paynes-gray);
@@ -90,17 +96,23 @@ header {
   height: fit-content;
   font-size: 20px;
   margin: 15px;
+  
 }
 .news-title {
   text-decoration: none;
-  font-size: 17px;
+  font-size: 1rem;
+  flex-grow: 3;
+
 }
 .news-title:hover {
   color: var(--bittersweet);
 }
 .news-author {
-  font-style: italic;
-  font-size: 15px;
+  font-size: 18px;
+  background-color: var(--glaucous);
+  padding: 10px;
+  margin-bottom: 0px;
+  color: var(--ghost-white);
 }
 .homepage-title {
   font-size: 2.5rem;
@@ -138,7 +150,7 @@ button:active {
 .article-card {
   border: 1px solid var(--paynes-gray);
   width: 24vw;
-  height: fit-content;
+  /* height: fit-content; */
   font-size: 20px;
   margin-top: 10px;
   margin-bottom: 30px;
@@ -166,12 +178,12 @@ button:active {
   color: var(--bittersweet);
 }
 
-.home-image {
+.home-image, .news-image {
   width: 100%;
   height: auto;
   margin: 0px;
   object-fit: cover;
-}
+} 
 .login-page, .signup-page {
   display: flex;
   flex-direction: column;
@@ -270,7 +282,7 @@ input:placeholder-shown {
   justify-content: center;
   border: 1.5px solid var(--paynes-gray);
   margin:10px;
-  width:80%;
+  width:fit-content;
 }
 .comment-form {
   display: none;
@@ -371,6 +383,9 @@ font-size: 17px;
   width: 'inherit';
   height: 'inherit';
 }
+.article-form div input {
+  width: 50vw;
+}
 .article-text {
   width: 50vw;
   height: 80vh;
@@ -409,4 +424,326 @@ font-size: 17px;
   top: 550px;
   width: 100%;
   height: 150px;
+}
+
+@media only screen and (max-width: 520px) {
+  
+  header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  h1 {
+    font-size: 2.5rem;
+    margin: 10px;
+    padding: 0px;
+  }
+  .menu {
+    margin: 10px;
+  }
+  .menu li {
+    font-size: 1.2rem;
+  }
+  .homepage-title {
+    font-size: 2rem;
+  }
+  .home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .articles-container, .news {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .article-card, .news-card {
+    width: 85%;
+  }
+  .login-form, .signup-form {
+    width: 80%;
+    height: auto;
+  }
+  .login-form div input, .signup-form div input {
+    width: 100%;
+  }
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .user-articles-section, 
+  .user-article, 
+  .create-article {
+    width: 95%;
+  }
+  .article-form div input {
+    width: 400px;
+    font-size: 15px;
+  }
+  .article-text {
+    width: 400px;
+    font-size: 15px;
+  }
+  .fullArticle-title {
+    font-size: 1.5rem;  
+  }
+  .fullArticle-text, .comment {
+    width: 80%;
+    font-size: 15px;
+  }
+  .fullArticle-author {
+    font-size: 15px;
+  }
+  .comments, .comment-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .comment-author, .comment-text {
+    font-size: 13px;
+    text-align:left;
+    width: 90%;
+  }
+  .comment-btn {
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+  }
+  
+  .icons {
+    position: relative;
+    left: -75px;
+  }
+  
+}
+
+@media only screen and (min-width: 520px) and (max-width: 768px) {
+   header h1 {
+     font-size: 2.3rem;
+   }
+   header {
+    width: 105%;
+   }
+   .menu li {
+     font-size: 1.1rem;
+     padding: 0.6rem;
+   }
+   .homepage-title {
+    font-size: 1.5rem;
+   }
+   .home {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+   }
+   .articles-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+   }
+   .news {
+    width: 50%
+   }
+   .article-card, .news-card {
+    width: 90%;
+   }
+   .article-title, .news-title {
+    font-size: 0.8rem;    
+   }
+   .article-author, .comment-count, .news-author {
+    font-size: 0.9rem;
+   }
+  .news-author {
+    margin-top: 30px;
+  }
+    .login-form {
+      width: 70%;
+      height: auto;
+    }
+    .login-form div input, .signup-form div input {
+      width: 300px;
+    }
+    .signup-form {
+      width: 80%;
+      height: auto;
+    }
+    .dashboard {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .user-articles-section, 
+    .user-article, 
+    .create-article {
+      width: 95%;
+    }
+    .article-form div input {
+      width: 600px;
+      font-size: 0.9rem;
+    }
+    .article-text {
+      width: 600px;
+      font-size: 15px;
+    }
+    .fullArticle-title {
+      font-size: 1.5rem;  
+    }
+    .fullArticle-text, .comment {
+      width: 80%;
+      font-size: 15px;
+    }
+    .fullArticle-author {
+      font-size: 15px;
+    }
+    .comment-section, .comments {
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80%;
+    }
+    .comment-author, .comment-text {
+      font-size: 13px;
+      text-align:left;
+      width: 90%;
+    }
+    .comment-btn {
+      width: 100px;
+      height: 40px;
+      font-size: 15px;
+    }
+    .icons {
+      position: relative;
+      left: -155px;
+    }
+    .icons span, .icons i {
+      font-size: 1.5rem;
+    
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+  header {
+    width: 105%;
+  }
+  .homepage-title {
+    font-size: 1.7rem;
+  }
+  .home {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .articles-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+  }
+  .news {
+    width: 50%
+  }
+  .article-card, .news-card {
+    width: 90%;
+  }
+  .article-title, .news-title {
+    font-size: 0.85rem;    
+  }
+  .article-author, .comment-count, .news-author {
+    font-size: 0.9rem;
+  }
+  .news-author {
+    margin-top: 30px;
+  }
+  .login-form {
+    width: 70%;
+    height: auto;
+  }
+  .login-form div input, .signup-form div input {
+    width: 450px;
+  }
+  .signup-form {
+    width: 70%;
+    height: auto;
+  }
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .user-articles-section, 
+  .user-article, 
+  .create-article {
+    width: 95%;
+  }
+  .article-form div input {
+    width: 600px;
+    font-size: 0.9rem;
+  }
+  .article-text {
+    width: 600px;
+    font-size: 15px;
+  }
+  .fullArticle-title {
+    font-size: 1.5rem;  
+  }
+  .fullArticle-text, .comment {
+    width: 80%;
+    font-size: 15px;
+  }
+  .fullArticle-author {
+    font-size: 15px;
+  }
+  .comments, .comment-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+  }
+  .comment-author, .comment-text {
+    font-size: 13px;
+    text-align:left;
+    width: 90%;
+  }
+  .comment-btn {
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+  }
+  .icons {
+    position: relative;
+    left: -215px;
+  }
+  .icons span {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1600px) {
+  .news-card {
+    width: 30vw;
+  }
+  .news {
+    width: 35vw;
+    margin-left: 1px;
+  }
+  .article-title, .news-title {
+    font-size: 0.85rem;    
+  }
+  .article-author, .comment-count, .news-author {
+    font-size: 0.9rem;
+  }
+  .news-author {
+    margin-top: 30px;
+  }
+  .signup-form {
+    height: auto;
+  }
 }

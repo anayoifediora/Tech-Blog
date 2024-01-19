@@ -74,7 +74,7 @@ const SingleArticle = () => {
             margin: 10px;
             padding: 10px;
             background-color: var(--ghost-white);
-            width: 35vw;
+            width: 80%;
             height: 25vh;
             border: solid 1.1px var(--paynes-gray);`
         
@@ -93,7 +93,7 @@ const SingleArticle = () => {
                             <h2 className="fullArticle-title">{title}</h2>
                             <p className="fullArticle-author"> Written by {articleAuthor} on  <span>{createdAt}</span></p>
                             <img className="fullArticle-img" src={image} alt=''/>
-                            <div style={{marginTop: '15px', position:'relative', right: '400px'}}>
+                            <div className="icons" style={{marginTop: '15px', position:'relative', right: '400px'}}>
                                 <i className = "bi bi-chat-left" style={iconStyle}><span style={iconTextStyle}>{commentCount}</span></i>
                                 <i className = "bi bi-hand-thumbs-up" style={iconStyle}><span style={iconTextStyle}>{likeCount}</span></i>
                             </div>
@@ -105,11 +105,11 @@ const SingleArticle = () => {
             
                         </div>
                         <div>
-                        <button className='comment-btn' onClick={displayCommentField}>Comment</button>
+                            <button className='comment-btn' onClick={displayCommentField}>Comment</button>
                             <button className = 'comment-btn' onClick={handleLike}>Like</button>
                         </div>
                         <div className="comment-section">
-                            
+                            <h2>Comments</h2>
                             <CommentForm articleId ={_id}/>
                             <div className= "comments">
                                 {comments.map((comment) => (
