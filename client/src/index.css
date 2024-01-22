@@ -149,8 +149,8 @@ button:active {
 }
 .article-card {
   border: 1px solid var(--paynes-gray);
-  width: 24vw;
-  /* height: fit-content; */
+  width: 25vw;
+  /* height: 40vh; */
   font-size: 20px;
   margin-top: 10px;
   margin-bottom: 30px;
@@ -412,12 +412,14 @@ font-size: 17px;
   margin: 20px;
 }
 .footer {
-  background-color: var(--glaucous);
+  /* background-color: var(--glaucous); */
+  background: url("../public/istockphoto-1464561980-1024x1024.jpg");
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: var(--ghost-white);
+  /* color: var(--ghost-white); */
+  color: rgb(184, 214, 184);
   text-align: center;
   padding: 10px;
   position: relative;
