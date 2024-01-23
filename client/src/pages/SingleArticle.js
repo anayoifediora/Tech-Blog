@@ -81,7 +81,7 @@ const SingleArticle = () => {
         const commentForm = document.getElementById('comment-form');
         commentForm.setAttribute('style', commentFormStyle);
     }
-    console.log(articleText)
+    console.log(articleText.split('  '))
     
     return (
         <div>
@@ -92,15 +92,12 @@ const SingleArticle = () => {
                             
                             <h2 className="fullArticle-title">{title}</h2>
                             <p className="fullArticle-author"> Written by {articleAuthor} on  <span>{createdAt}</span></p>
-                            <img className="fullArticle-img" src={image} alt=''/>
+                            <img className="fullArticle-img" src={image.split('fakepath').pop()} alt=''/>
                             <div className="icons" style={{marginTop: '15px', position:'relative', right: '400px'}}>
                                 <i className = "bi bi-chat-left" style={iconStyle}><span style={iconTextStyle}>{commentCount}</span></i>
                                 <i className = "bi bi-hand-thumbs-up" style={iconStyle}><span style={iconTextStyle}>{likeCount}</span></i>
                             </div>
-                            {/* <p>liked by</p>
-                            {likes.map((like) => (
-                                <p key={like._id}>{like.likeAuthor}</p>
-                            ))} */}
+                            
                             <p className="fullArticle-text">{articleText}</p>
             
                         </div>
