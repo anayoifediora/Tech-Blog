@@ -128,7 +128,7 @@ const SingleArticle = () => {
                 </>    
             ) : (
                 <h4 style= {{fontSize: '30px', color: "var(--bittersweet)"}}>
-                    Kindly login to view this article
+                    Kindly login or signup to view this article
                 </h4>
             )}
         </div>
