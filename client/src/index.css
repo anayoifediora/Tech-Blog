@@ -257,13 +257,13 @@ input:placeholder-shown {
   display:flex;
   justify-content: center;
   text-align: justify;
-  line-height: 1.6;
+  line-height: 1.3;
   width:80%;
   margin-top: 15px;
   margin-bottom: 30px;
   padding: 5px;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 22px;
+  font-size: 23px;
   font-weight: 300;
   
 }
@@ -457,6 +457,9 @@ font-size: 17px;
   }
   .article-card, .news-card {
     width: 85%;
+  }
+  .article-title, .article-author, .comment-count {
+    font-size: 1rem;    
   }
   .login-form, .signup-form {
     width: 80%;

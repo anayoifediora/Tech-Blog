@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import { QUERY_SINGLE_ARTICLE } from '../utils/queries';
 import { useMutation } from '@apollo/client';
 import { ADD_LIKE } from '../utils/mutation';
@@ -23,7 +22,7 @@ const SingleArticle = () => {
     //     console.log(profile)
     // }, []);
 
-    const [addLike, { error }] = useMutation(ADD_LIKE);
+    const [addLike] = useMutation(ADD_LIKE);
 
     const { articleId } = useParams();
 
@@ -99,6 +98,10 @@ const SingleArticle = () => {
                             </div>
                             
                             <p className="fullArticle-text">{articleText}</p>
+                            {/* {articleText.split('  ').map((item) => (
+                                <p key={item._id} className="fullArticle-text">{item}</p>
+                            ))} */}
+                            
             
                         </div>
                         <div>
