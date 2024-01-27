@@ -56,7 +56,6 @@ const ArticleForm = () => {
                                onChange={handleChange}
                                name='image'
                                accept='image/*'/>
-                        {/* <button>Upload</button> */}
                     </div>
                     <div>
                         <label>Description</label>

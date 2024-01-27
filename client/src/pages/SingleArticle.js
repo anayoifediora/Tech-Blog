@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import { QUERY_SINGLE_ARTICLE } from '../utils/queries';
 import { useMutation } from '@apollo/client';
 import { ADD_LIKE } from '../utils/mutation';
@@ -23,7 +22,7 @@ const SingleArticle = () => {
     //     console.log(profile)
     // }, []);
 
-    const [addLike, { error }] = useMutation(ADD_LIKE);
+    const [addLike] = useMutation(ADD_LIKE);
 
     const { articleId } = useParams();
 
@@ -81,7 +80,7 @@ const SingleArticle = () => {
         const commentForm = document.getElementById('comment-form');
         commentForm.setAttribute('style', commentFormStyle);
     }
-    console.log(articleText)
+    console.log(articleText.split('  '))
     
     return (
         <div>
@@ -92,16 +91,17 @@ const SingleArticle = () => {
                             
                             <h2 className="fullArticle-title">{title}</h2>
                             <p className="fullArticle-author"> Written by {articleAuthor} on  <span>{createdAt}</span></p>
-                            <img className="fullArticle-img" src={image} alt=''/>
+                            <img className="fullArticle-img" src={image.split('fakepath').pop()} alt=''/>
                             <div className="icons" style={{marginTop: '15px', position:'relative', right: '400px'}}>
                                 <i className = "bi bi-chat-left" style={iconStyle}><span style={iconTextStyle}>{commentCount}</span></i>
                                 <i className = "bi bi-hand-thumbs-up" style={iconStyle}><span style={iconTextStyle}>{likeCount}</span></i>
                             </div>
-                            {/* <p>liked by</p>
-                            {likes.map((like) => (
-                                <p key={like._id}>{like.likeAuthor}</p>
-                            ))} */}
+                            
                             <p className="fullArticle-text">{articleText}</p>
+                            {/* {articleText.split('  ').map((item) => (
+                                <p key={item._id} className="fullArticle-text">{item}</p>
+                            ))} */}
+                            
             
                         </div>
                         <div>
@@ -131,7 +131,7 @@ const SingleArticle = () => {
                 </>    
             ) : (
                 <h4 style= {{fontSize: '30px', color: "var(--bittersweet)"}}>
-                    Kindly login to view this article
+                    Kindly login or signup to view this article
                 </h4>
             )}
         </div>
