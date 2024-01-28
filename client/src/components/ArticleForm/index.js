@@ -30,7 +30,7 @@ const ArticleForm = () => {
         } catch (err) {
             console.error(err);
         }
-        window.location.reload('/dashboard');
+        window.location.reload('/');
     }
 
     const handleChange = (event) => {
