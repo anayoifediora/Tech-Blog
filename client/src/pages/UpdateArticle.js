@@ -50,7 +50,7 @@ const UpdateForm = () => {
         } catch (err) {
             console.error(err)
         }
-        await window.location.assign(`/dashboard`);
+        await window.location.assign(`/`);
     }
 
     return (
