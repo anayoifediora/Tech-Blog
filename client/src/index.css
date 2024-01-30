@@ -8,12 +8,13 @@
 }
 body {
   font-family: 'Gabarito', sans-serif;
-  background-color: rgb(235, 157, 89, 0.2)
+  background-color: rgb(235, 157, 89, 0.2);
 }
 h1 {
   color: rgb(184, 214, 184);
   font-size: 3.5rem;
   margin-left: 20px;
+  font-family: 'Fredericka the Great', serif;
 }
 h1:hover {
   color: rgb(235, 157, 89);
@@ -115,6 +116,7 @@ header {
 }
 .homepage-title {
   font-size: 2.5rem;
+  font-family: 'Fredericka the Great', serif;
 }
 button {
   border: 2px solid #0c960c;
@@ -466,7 +468,7 @@ font-size: 17px;
     height: auto;
   }
   .login-form div input, .signup-form div input {
-    width: 100%;
+    width: 90%;
   }
   .dashboard {
     display: flex;

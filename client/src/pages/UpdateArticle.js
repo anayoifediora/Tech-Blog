@@ -50,7 +50,8 @@ const UpdateForm = () => {
         } catch (err) {
             console.error(err)
         }
-        await window.location.assign(`/`);
+        await window.location.assign(`/dashboard`);
+        alert("Successfully updated article");
     }
 
     return (

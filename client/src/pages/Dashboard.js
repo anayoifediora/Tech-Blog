@@ -34,7 +34,7 @@ const Dashboard = () => {
             console.error(err)
         }
         //reload the page after deleting an article
-        window.location.reload('/');
+        window.location.assign('/');
     } 
 
     return (

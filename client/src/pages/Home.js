@@ -14,7 +14,6 @@ const Home = () => {
 
     useEffect(() => {
         setArticles(data?.articles || []);
-        console.log(data)
     }, [data]);
 
     useEffect(() => {
@@ -23,7 +22,8 @@ const Home = () => {
         let month = date.getMonth();
         let year = date.getFullYear();
         
-        let requestUrl = `https://newsapi.org/v2/everything?domains=techcrunch.com,thenextweb.com&from=${year}-${month}1-${day - 1}&to=${year}-${month}1-${day - 1}&apiKey=4b88cfe067334fcea64575c884088db9`
+        let requestUrl = `https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=4b88cfe067334fcea64575c884088db9`
+        // let requestUrl = `https://newsapi.org/v2/everything?domains=techcrunch.com,thenextweb.com&from=${year}-${month}1-${day - 1}&to=${year}-${month}1-${day - 1}&apiKey=4b88cfe067334fcea64575c884088db9`
         
         fetch(requestUrl)
         .then(function(response) {
@@ -61,7 +61,7 @@ const Home = () => {
                         ))}              
                     </div>
                     <div className="news">
-                        <h2 style={{textDecoration: "underline"}}>Other News</h2>
+                        <h2 style={{textDecoration: "underline", fontFamily: 'Fredericka the Great  serif'}}>Other News</h2>
                         {
                         news.map((article, index) => (
                             <div className='news-card' key={index}>
